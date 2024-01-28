@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('funds', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->year('start_year');
             $table->unsignedBigInteger('manager_id');
             $table->timestamps();
             
