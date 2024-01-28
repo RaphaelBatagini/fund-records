@@ -1,5 +1,8 @@
 # Fund Records
 
+## Data Model - ER Diagram
+![ER Diagram](./fund-records.png)
+
 ## Requirements
 
 - [Docker](https://docs.docker.com/install/)
