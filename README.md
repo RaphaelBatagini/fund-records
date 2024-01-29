@@ -3,7 +3,7 @@
 ## Data Model - ER Diagram
 ![ER Diagram](./fund-records.png)
 
-## Links
+## Acessing the application
 - Application: http://localhost/
 - Mailhog: http://localhost:8025/
 
@@ -39,6 +39,12 @@ docker compose run --rm app composer install
 docker compose run --rm app composer dump-autoload
 ```
 
+### Start the application
+
+```bash
+docker compose up -d
+```
+
 ### Create storage link
 
 ```bash
@@ -47,63 +53,14 @@ docker exec -it APP_CONTAINER_NAME sh -c "cd public && ln -s ../storage/app/publ
 
 **Important:** Do not run the command `php artisan storage:link` on the host machine, it will create a symlink that will not work on the container.
 
-## Run the application
-
-### Start the application
-
-```bash
-docker compose up -d
-```
-
-### Run migrations
+### Run the migrations
 
 ```bash
 docker exec APP_CONTAINER_NAME php artisan migrate
-```
-
-### Run seeds
-
-```bash
-docker exec APP_CONTAINER_NAME php artisan db:seed
 ```
 
 ### Run tests
 
 ```bash
 docker exec APP_CONTAINER_NAME php artisan test
-```
-
-### Stop the application
-
-```bash
-docker compose down
-```
-
-### Run composer commands
-
-Add new dependency
-
-```bash
-docker exec APP_CONTAINER_NAME composer require <dependency>
-```
-
-Update dependencies
-
-```bash
-docker exec APP_CONTAINER_NAME composer update
-```
-
-## Access the application
-
-### Access through the browser
-
-```bash
-http://localhost:80
-```
-
-### Access the database
-
-```bash
-docker exec db bash
-mysql -u laravel -p
 ```
