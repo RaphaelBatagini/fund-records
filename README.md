@@ -64,3 +64,9 @@ docker exec APP_CONTAINER_NAME php artisan migrate
 ```bash
 docker exec APP_CONTAINER_NAME php artisan test
 ```
+
+## TODO
+- Add documentation using Swagger
+- Run tests on Github Actions and add a badge with its status to README.md
+- Add more unit tests
+- Create some feature tests
