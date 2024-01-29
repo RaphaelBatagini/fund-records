@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\Fund;
 use App\Models\FundAlias as Alias;
+use App\Events\DuplicateFundWarning;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -69,7 +70,7 @@ class FundService
             $fund = Fund::create($data);
 
             if ($existingFund) {
-                event(new \App\Events\DuplicateFundWarning($existingFund, $fund));
+                DuplicateFundWarning::dispatch($existingFund, $fund);
             }
 
             if ($aliases) {
