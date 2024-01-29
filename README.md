@@ -3,6 +3,10 @@
 ## Data Model - ER Diagram
 ![ER Diagram](./fund-records.png)
 
+## Links
+- Application: http://localhost/
+- Mailhog: http://localhost:8025/
+
 ## Requirements
 
 - [Docker](https://docs.docker.com/install/)
