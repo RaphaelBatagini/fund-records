@@ -27,4 +27,12 @@ class Fund extends Model
     {
         return $this->belongsTo(Manager::class);
     }
+
+    /**
+     * Get the fund aliases for the fund.
+     */
+    public function aliases()
+    {
+        return $this->hasMany(FundAlias::class);
+    }
 }

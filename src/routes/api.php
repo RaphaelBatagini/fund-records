@@ -23,5 +23,6 @@ Route::group([
     'prefix' => 'funds'
 ], function ($router) {
     Route::get('/', 'FundsController@index');
+    Route::post('/', 'FundsController@store');
     Route::put('/{id}', 'FundsController@update');
 });
